@@ -1,0 +1,121 @@
+[tool.black]
+# Configurações do Black - O formatador de código sem compromissos
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+# Configurações do isort
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+# Configurações do pytest
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v -s --cov=src --cov-report=term-missing --cov-report=html"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+# Configurações do mypy
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+# Configurações do flake8
+[flake8]
+max-line-length = 88
+extend-ignore = "E203, W503"
+exclude = ".git,__pycache__,venv,build,dist"
+per-file-ignores = "__init__.py: F403,F401,*.py: E501"
+
+# Configurações do coverage
+[tool.coverage.run]
+source = ["src"]
+omit = ["**/__init__.py", "**/tests/**"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+skip_covered = true
+skip_empty = true
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
+
+# Configurações do bandit
+[tool.bandit]
+# Nível de confiança (LOW, MEDIUM, HIGH)
+confidence = ["HIGH"]
+# Nível de severidade (LOW, MEDIUM, HIGH)
+severity = ["HIGH", "MEDIUM"]
+# Arquivos para ignorar
+exclude_dirs = ["tests", "docs", "venv"]
+# Plugins para habilitar
+enable_plugins = ["B101", "B102", "B104"]
+# Nível de saída (file, screen, json, yaml, custom)
+output_format = "screen"
+# Arquivo de saída personalizado
+output_file = "bandit_results.txt"
+# Nível de detalhe (0-5)
+verbose = 1
+# Número de processos para execução paralela
+processes = 4
+
+# Configurações do radon
+[tool.radon.complexity]
+# Complexidade máxima permitida
+max_cc = 10
+# Mostrar complexidade de funções
+show_closures = true
+# Ordenar por complexidade
+order = "SCORE"
+# Mostrar apenas funções acima da complexidade mínima
+min = "A"
+# Mostrar estatísticas
+average = true
+
+# Configurações do pre-commit
+[tool.pre-commit]
+# Atualizar automaticamente as revisões dos hooks
+autoupdate = true
+# Não permitir falhas
+fail_fast = false
+# Mostrar mensagens de aviso
+warn_unstaged = true
+# Mostrar mensagens de erro
+warn_error = false
+# Mostrar mensagens de aviso para hooks desatualizados
+warn_outdated = true
+# Mostrar mensagens de aviso para hooks não aplicáveis
+warn_skipped = true
+# Mostrar mensagens de aviso para hooks desconhecidos
+warn_unknown = true
+# Mostrar mensagens de aviso para hooks com erros
+warn_error = true
+# Mostrar mensagens de aviso para hooks com avisos
+warn_warnings = true
+# Mostrar mensagens de aviso para hooks com informações
+warn_info = true
+# Mostrar mensagens de aviso para hooks com depuração
+warn_debug = true

@@ -1,0 +1,90 @@
+# Configuração do pre-commit para validação de código
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: name-tests-test
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--line-length=88]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+        args: [--profile=black, --filter-files]
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [flake8-bugbear==23.3.12]
+        args: [--max-line-length=88, --extend-ignore=E203, --max-complexity=10]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-PyYAML, types-requests, types-python-dateutil]
+        args: [--ignore-missing-imports, --disallow-untyped-defs, --strict-optional]
+
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+        args: [--skip=B101]
+
+  - repo: https://github.com/PyCQA/radon
+    rev: 5.1.0
+    hooks:
+      - id: radon-mi
+      - id: radon-cc
+        args: [--min=B, --show-closures]
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.9.0
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-mock-methods
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.4.0
+    hooks:
+      - id: yesqa
+        additional_dependencies: [flake8]
+
+  - repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.12.1
+    hooks:
+      - id: validate-pyproject
+
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.4
+    hooks:
+      - id: codespell
+        args: [--write-changes, --ignore-words-list="ba,datas,nd,nin,serie,te,teh,ue"

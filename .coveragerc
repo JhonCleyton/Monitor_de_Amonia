@@ -1,0 +1,142 @@
+[run]
+# Diretórios a serem incluídos na análise de cobertura
+source = src
+
+# Diretórios a serem ignorados
+omit =
+    */__init__.py
+    */tests/*
+    */venv/*
+    */.tox/*
+    */build/*
+    */dist/*
+
+# Incluir linhas vazias na contagem de cobertura
+skip_empty = false
+
+# Não incluir linhas com "pragma: no cover" na contagem
+cover_pylib = false
+
+# Incluir arquivos Python que não são importados
+include = ""
+    */src/*.py
+    */src/*/*.py
+    */src/*/*/*.py
+"""
+
+[report]
+# Mostrar linhas que faltam cobertura
+show_missing = true
+
+# Ignorar erros de importação
+ignore_errors = true
+
+# Ordem de classificação do relatório
+sort = cover
+
+# Precisão decimal para porcentagens
+precision = 2
+
+# Pular arquivos com cobertura acima deste limite
+skip_covered = true
+
+# Pular arquivos vazios
+skip_empty = true
+
+# Ignorar linhas que correspondam a estes padrões
+exclude_lines =
+    # Um pragma para marcar linhas intencionalmente sem cobertura
+    pragma: no cover
+    
+    # Linhas que contêm apenas docstrings
+    ^\s*$
+    
+    # Linhas que contêm apenas comentários
+    ^\s*#.*$
+    
+    # Métodos mágicos
+    def __\w+__
+    
+    # Classes abstratas
+    @(abc\.)?abstractmethod
+    
+    # Blocos try/except vazios
+    except:\s*
+    
+    # Blocos finally vazios
+    finally:\s*
+    
+    # Blocos else vazios
+    else:\s*
+    
+    # Blocos except que apenas re-levantam
+    except .*:\s*raise
+    
+    # Código que só é executado em Python 2 ou Python 3
+    (?:if|elif) (?:PY2|PY3|PY_2|PY_3|PY2_AND_3|PY2_ONLY|PY3_ONLY):
+    
+    # Código que só é executado em versões específicas do Python
+    (?:if|elif) sys\.version_info < \(3,\s*\d+\):
+    (?:if|elif) sys\.version_info >= \(3,\s*\d+\):
+
+[html]
+# Diretório para gerar o relatório HTML
+directory = htmlcov
+
+# Título do relatório HTML
+title = Cobertura de Código - Monitor de Amônia
+
+# Incluir o conteúdo dos arquivos no relatório HTML
+show_contexts = true
+
+# Mostrar os botões de navegação no relatório HTML
+skip_covered = true
+
+# Não mostrar o botão "[show all]" no relatório HTML
+no_annotate = false
+
+# Não mostrar o botão "[show all]" no relatório HTML
+skip_empty = true
+
+[xml]
+# Arquivo de saída para o relatório XML
+output = coverage.xml
+
+# Incluir o conteúdo dos arquivos no relatório XML
+show_contexts = false
+
+# Incluir a porcentagem de cobertura no relatório XML
+show_rpcs = false
+
+# Incluir a porcentagem de cobertura no relatório XML
+show_missing = true
+
+# Incluir a porcentagem de cobertura no relatório XML
+skip_empty = true
+
+# Incluir a porcentagem de cobertura no relatório XML
+skip_covered = true
+
+# Incluir a porcentagem de cobertura no relatório XML
+skip_empty = true
+
+[paths]
+# Mapeamento de caminhos para normalizar
+source =
+    src/
+    */src/
+    */src/*
+    */src/*/*
+    */src/*/*/*
+
+# Mapeamento de caminhos para normalizar
+relative_files = true
+
+# Mapeamento de caminhos para normalizar
+relative_directory = .
+
+# Mapeamento de caminhos para normalizar
+relative_path = true
+
+# Mapeamento de caminhos para normalizar
+relative_to = .

@@ -1,0 +1,64 @@
+# Dependências de desenvolvimento
+-r requirements.txt
+
+# Testes
+pytest>=7.0.0
+pytest-cov>=3.0.0
+pytest-qt>=4.0.0
+pytest-mock>=3.10.0
+
+# Formatação e análise de código
+black>=22.0.0
+isort>=5.10.0
+flake8>=4.0.0
+mypy>=0.910
+
+# Documentação
+sphinx>=4.0.0
+sphinx-rtd-theme>=1.0.0
+sphinx-autodoc-typehints>=1.12.0
+
+# Ferramentas de desenvolvimento
+pre-commit>=2.15.0
+ipython>=8.0.0
+ipdb>=0.13.0
+
+# Geração de documentação da API
+sphinxcontrib-httpdomain>=1.8.0
+sphinxcontrib-httpexample>=0.10.0
+
+# Para testes de interface
+PyQt6-Qt6>=6.4.0
+
+# Para geração de relatórios de cobertura
+coverage>=6.0.0
+
+# Para análise estática de código
+pylint>=2.12.0
+
+# Para verificação de segurança
+bandit>=1.7.0
+safety>=2.0.0
+
+# Para gerenciamento de dependências
+pip-tools>=6.4.0
+
+# Para testes de integração
+pytest-xdist>=2.5.0
+pytest-timeout>=2.1.0
+
+# Para testes de interface do usuário
+pytest-qt>=4.0.0
+
+# Para geração de documentação de API
+sphinxcontrib-openapi>=0.8.1
+
+# Para análise de complexidade
+radon>=5.1.0
+
+# Para verificação de segurança de dependências
+twine>=4.0.0
+
+# Para geração de documentação interiva
+jupyter>=1.0.0
+nbsphinx>=0.8.8

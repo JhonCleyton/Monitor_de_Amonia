@@ -1,0 +1,175 @@
+{
+    "app": {
+        "name": "Monitor de Amônia",
+        "version": "1.0.0",
+        "language": "pt_BR",
+        "theme": "dark"
+    },
+    "modbus": {
+        "port": "COM3",
+        "baudrate": 9600,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "timeout": 1.0,
+        "retries": 3,
+        "debug": false
+    },
+    "sensors": [
+        {
+            "id": 1,
+            "name": "Sensor 1",
+            "address": 1,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 2,
+            "name": "Sensor 2",
+            "address": 2,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 3,
+            "name": "Sensor 3",
+            "address": 3,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 4,
+            "name": "Sensor 4",
+            "address": 4,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 5,
+            "name": "Sensor 5",
+            "address": 5,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 6,
+            "name": "Sensor 6",
+            "address": 6,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 7,
+            "name": "Sensor 7",
+            "address": 7,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 8,
+            "name": "Sensor 8",
+            "address": 8,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 9,
+            "name": "Sensor 9",
+            "address": 9,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        },
+        {
+            "id": 10,
+            "name": "Sensor 10",
+            "address": 10,
+            "unit": "ppm",
+            "min_value": 0,
+            "max_value": 100,
+            "warning_threshold": 25,
+            "alarm_threshold": 50,
+            "enabled": true
+        }
+    ],
+    "notifications": {
+        "email": {
+            "enabled": false,
+            "smtp_server": "smtp.example.com",
+            "smtp_port": 587,
+            "use_tls": true,
+            "username": "seu_email@example.com",
+            "password": "sua_senha",
+            "from_email": "monitor_amonia@example.com",
+            "to_emails": ["alerta@example.com"],
+            "subject_prefix": "[Alerta de Amônia] "
+        },
+        "whatsapp": {
+            "enabled": false,
+            "account_sid": "sua_account_sid",
+            "auth_token": "seu_auth_token",
+            "from_number": "whatsapp:+14155238886",
+            "to_numbers": ["whatsapp:+5511999999999"]
+        },
+        "alarm_sound": {
+            "enabled": true,
+            "warning_file": "warning.wav",
+            "alarm_file": "alarm.wav"
+        }
+    },
+    "database": {
+        "type": "sqlite",
+        "filename": "monitor_amonia.db",
+        "retention_days": 30
+    },
+    "ui": {
+        "refresh_interval_ms": 1000,
+        "decimal_places": 2,
+        "date_format": "dd/MM/yyyy HH:mm:ss",
+        "theme": {
+            "primary_color": "#2196F3",
+            "secondary_color": "#FF9800",
+            "warning_color": "#FFC107",
+            "danger_color": "#F44336",
+            "success_color": "#4CAF50",
+            "background_color": "#1E1E1E",
+            "text_color": "#E0E0E0",
+            "grid_color": "#333333"
+        }
+    }
+}
