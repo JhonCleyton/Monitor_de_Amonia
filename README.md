@@ -179,12 +179,6 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
   </div>
 </div>
 
-## 📧 Contato
-
-Seu Nome - [@seu_twitter](https://twitter.com/seu_twitter) - email@exemplo.com
-
-Link do Projeto: [https://github.com/seu_usuario/Monitor_amonia](https://github.com/seu_usuario/Monitor_amonia)
-
 ## 🙏 Agradecimentos
 
 - [PyQt](https://www.riverbankcomputing.com/software/pyqt/)
