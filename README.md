@@ -164,7 +164,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 <div align="center">
   <p>© 2025 JC Bytes - Todos os direitos reservados</p>
-  <p>Desenvolvido com ❤️ por <a href="https://jhoncleyton.dev" target="_blank">Jhon Freire</a></p>
+  <p>Desenvolvido por <a href="https://jhoncleyton.dev" target="_blank">Jhon Freire</a></p>
   
   <div>
     <a href="https://www.instagram.com/jc.devops" target="_blank">
